@@ -1,0 +1,30 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: payment-dubbo-provider
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: centos.orb.local:8848
+
+dubbo:
+  scan:
+    # 扫描包路径
+    base-packages: com.orb.springcloud.alibaba.service
+  # 注册地址
+  registry:
+    address: nacos://centos.orb.local:8848
+    timeout: 10000
+
+  protocol:
+    name: dubbo
+    port: -1  # 从20880之后自增
+
+
+logging:
+  level:
+    root: info
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"

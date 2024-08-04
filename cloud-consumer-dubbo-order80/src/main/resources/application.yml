@@ -1,0 +1,17 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: cloud-dubbo-consumer-order
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: centos.orb.local:8848
+dubbo:
+  registry:
+    address: nacos://centos.orb.local:8848
+    timeout: 10000
+    protocol: dubbo
+    port: -1
