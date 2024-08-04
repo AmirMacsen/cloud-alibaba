@@ -7,6 +7,6 @@ import org.springframework.stereotype.Component;
 public class IPaymentServiceFallback implements IPaymentService {
     @Override
     public String index() {
-        return "服务繁忙，请稍等片刻";
+        return "服务繁忙，请稍等片刻...";
     }
 }
