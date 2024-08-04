@@ -1,0 +1,29 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: consumer-openfeign-order
+    # nacos地址
+  cloud:
+    nacos:
+      discovery:
+        server-addr: centos.orb.local:8848
+    openfeign:
+      client:
+        config:
+          default:
+            connectTimeout: 5000
+            readTimeout: 5000
+
+feign:
+  sentinel:
+    # 开启sentinel对OpenFeign的支持
+    enabled: true
+
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+  level:
+    root: info
+    org.springframework.cloud.openfeign: DEBUG

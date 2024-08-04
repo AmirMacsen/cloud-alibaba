@@ -1,0 +1,15 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: payment-provider
+
+  cloud:
+    nacos:
+      discovery:
+        # nacos地址
+        server-addr: centos.orb.local:8848
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
