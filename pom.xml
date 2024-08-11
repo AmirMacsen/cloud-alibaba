@@ -15,6 +15,12 @@
     <module>cloud-service-api</module>
     <module>cloud-dubbo-provider-payment8001</module>
     <module>cloud-consumer-dubbo-order80</module>
+    <module>cloud-config-test3443</module>
+    <module>cloud-provider-sentinel-payment8001</module>
+    <module>cloud-gateway-9090</module>
+    <module>Sentinel-1.8.8</module>
+      <module>cloud-seata-bank2</module>
+    <module>cloud-seata-bank1</module>
   </modules>
 
   <properties>
@@ -35,6 +41,13 @@
         <version>${spring.boot.version}</version>
         <type>pom</type>
       </dependency>
+
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter</artifactId>
+        <version>${spring.boot.version}</version>
+      </dependency>
+
 
       <dependency>
         <groupId>org.springframework.boot</groupId>

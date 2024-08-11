@@ -1,0 +1,28 @@
+server:
+  port: 9090
+
+spring:
+  application:
+    name: gateewway
+
+  cloud:
+    nacos:
+      discovery:
+        # nacos地址
+        server-addr: centos.orb.local:8848
+
+    gateway:
+      routes:
+        - id: payment-provider-route
+          # 路径匹配，匹配到则转发
+          uri: lb://payment-sentinel-provider
+          # 断言，处理这个路径
+          predicates:
+            - Path=/payment/**
+      # 添加过滤器
+      default-filters:
+        # 添加请求头设置值为gateway
+        - AddRequestHeader=origin, gateway
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"

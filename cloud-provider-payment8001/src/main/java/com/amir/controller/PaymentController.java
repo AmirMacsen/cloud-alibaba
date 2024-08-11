@@ -1,8 +1,6 @@
 package com.amir.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.concurrent.TimeUnit;
 
@@ -17,5 +15,10 @@ public class PaymentController {
             throw new RuntimeException(e);
         }
         return "payment index";
+    }
+
+    @GetMapping("findById")
+    public String findByID(@RequestParam("id") String id){
+        return "商品Id: " + id;
     }
 }

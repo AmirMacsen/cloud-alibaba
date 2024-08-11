@@ -9,12 +9,17 @@ spring:
     nacos:
       discovery:
         server-addr: centos.orb.local:8848
+    sentinel:
+      transport:
+        port: 8719
+        dashboard: centos.orb.local:8080
     openfeign:
       client:
         config:
           default:
-            connectTimeout: 5000
-            readTimeout: 5000
+            connectTimeout: 10000
+            readTimeout: 20000
+
 
 feign:
   sentinel:

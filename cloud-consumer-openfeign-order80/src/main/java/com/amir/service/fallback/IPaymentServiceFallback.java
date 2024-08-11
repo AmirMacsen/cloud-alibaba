@@ -9,4 +9,9 @@ public class IPaymentServiceFallback implements IPaymentService {
     public String index() {
         return "服务繁忙，请稍等片刻";
     }
+
+    @Override
+    public String findById(String id) {
+        return "";
+    }
 }

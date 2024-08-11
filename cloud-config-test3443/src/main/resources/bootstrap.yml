@@ -1,0 +1,22 @@
+server:
+  port: 3443
+
+spring:
+  application:
+    name: cloud-config-test
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: centos.orb.local:8848
+      config:
+        server-addr: centos.orb.local:8848
+        namespace: dedaa896-c341-47f0-a7d0-612c40c105cb
+        group: DEFAULT_GROUP
+        file-extension: yaml
+        prefix: cloud-config
+
+  profiles:
+    active: dev
+
+

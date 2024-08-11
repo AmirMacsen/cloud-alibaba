@@ -1,0 +1,31 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: payment-sentinel-provider
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: centos.orb.local:8848
+
+    sentinel:
+      transport:
+        port: 8719
+        # 修改控制台的地址
+        dashboard: localhost:8002
+      datasource:
+        # 这个key自定义，代表数据源的key值
+        local-data-source:
+          nacos:
+            server-addr: centos.orb.local:8848
+            namespace: e0612dc9-7f08-4a06-82d5-0ecaf8139e1b
+            data-id: ${spring.application.name}-flow-rules
+            group-id: SENTINEL_GROUP
+            rule-type: flow
+
+logging:
+  level:
+    root: info
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"

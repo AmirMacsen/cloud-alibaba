@@ -1,0 +1,28 @@
+server:
+  port: 6002
+
+spring:
+  application:
+    name: cloud-bank1-consumer
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://centos.orb.local:3306/bank_1?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+    username: root
+    password: myOcP!eBZ56ahvtz
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: centos.orb.local:8848
+
+seata:
+  registry:
+    type: file
+  service:
+    grouplist:
+      default: centos.orb.local:8090
+    #配置事务分组，在v1.5之后默认值为default_tx_group
+    vgroup-mapping:
+      my_test_tx_group: default
+  tx-service-group: my_test_tx_group
