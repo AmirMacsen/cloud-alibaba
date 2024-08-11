@@ -22,3 +22,4 @@ seata:
     vgroup-mapping:
       my_test_tx_group: default
   tx-service-group: my_test_tx_group
+
